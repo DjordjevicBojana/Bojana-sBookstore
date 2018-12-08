@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html ng-app="bookstoreModule">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Bojana's bookstore</title>
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="#">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css"  >
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" >
+    <script src="js/angularjs/1.7.5/angular.min.js"></script>
+     <!--<script src="js/angularjs/1.4.7/angular-route.min.js"></script>-->
+    
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"> </script-->
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"> </script-->
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="Controllers/bookstoreController.js"></script>
+    <script src="Controllers/homeController.js"></script>
+    <script src="Controllers/loginController.js"></script>
+    <script src="Controllers/adminController.js"></script>
+    <script src="Controllers/aboutController.js"></script>
+    <script src="Controllers/upcommingBooksController.js"></script>
+    
+</head>
+<body >
+    
+    
+    <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-sref="home" ng-controller="homeCTRL" ui-sref-active="myActive">Bojana's bookstore</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li ng-controller="homeCTRL"><a ui-sref="home" ui-sref-active="myActive">Home</a></li>
+                    <li ng-controller="upcomingBooksCTRL"><a ui-sref="upcomingBooks" ui-sref-active="myActive">Upcoming books</a></li>
+                    <li ng-controller="aboutCTRL"><a ui-sref="about" ui-sref-active="myActive">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/" ng-controller="loginCTRL" id="loginBtnopen">Login</a></li>
+
+                </ul>
+            </div>
+            <div id="loginModal" class="modal myModalLogin" ng-controller="loginCTRL">
+                <div class="modal-content-login">
+                    <span class="close">&times;</span>
+                    <form id="myLoginForm" ng-submit="checkUP(username,password)" class="form myLogin">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 myLabelLogin" for="inputLoginUN">Username </label>
+                            <input type="text" class="form-control myInputLogin" id="inputLoginUN" ng-model="username" placeholder="Enter username" autofocus required="" />
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="control-label col-sm-2 myLabelLogin" for="inputLoginPW">Password </label>
+                            <input type="password" class="form-control myInputLogin" id="inputLoginPW" ng-model="password" placeholder="Enter password" required="" />
+
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary myBtnLogin">Login</button><br />
+                            <br />
+                            <span class="text-danger myMiddle">{{ error }}</span>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+        </div>
+        <div class="row">
+            <div class="col-sm-2  myColumn1">
+                <h2></h2>
+                <div class="list-group">
+                    <a class="list-group-item" ui-sref="home" ng-controller="homeCTRL" ui-sref-active="myActive">Home</a>
+                    <a class="list-group-item" ui-sref="upcomingBooks" ng-controller="upcomingBooksCTRL" ui-sref-active="myActive">Upcoming books</a>
+                    <a class="list-group-item" ui-sref="about" ng-controller="aboutCTRL" ui-sref-active="myActive">About</a>
+                </div>
+            </div>
+
+            <div ui-view class="col-sm-9 myTemplate"></div>
+            <!--<ui-view></ui-view>-->
+
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-sm-1 myColumn3"></div>
+            <div class="clearfix visible-sm-block"></div>
+
+        </div>
+        <!--
+    <div class="row">
+       
+        <div class="col-sm-12">
+           <footer class="myFooter">
+               <p>&copy; Copyright 2013 Tutorial Republic - used for purpose of testing SPA Bojana's bookstore</p>
+           </footer>
+        </div>
+    </div>
+  -->
+    </div>
+    
+   
+</body>
+</html>

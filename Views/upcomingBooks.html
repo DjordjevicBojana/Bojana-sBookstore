@@ -1,0 +1,14 @@
+<h1>{{message}}</h1>
+<br/><br/>
+<ul>
+    <li ng-repeat="book in upcomingBooks">   
+    <img class="myImg" ng-src={{book.pic}} alt={{book.name}} > 
+        <ul>
+            <li><strong> {{book.name}} </strong></li>
+            <li><strong>author: </strong>{{book.authorFname}} {{book.authorLname}} </li>
+            <li><strong>genre: </strong>{{book.genre}} </li>
+            <li><strong>description:</strong>{{book.description}}</li>
+        </ul> 
+        <br/><br/>
+    </li>
+</ul>

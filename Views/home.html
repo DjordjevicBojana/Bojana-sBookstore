@@ -1,0 +1,87 @@
+<h2>Books</h2>
+
+<br />
+<label for="search">Search: </label>
+<input ng-model="q" id="search" />
+
+<span class="myRight">
+    <label for="sort">Sort by: </label>
+    <select ng-model="sortColumn" id="sort">
+        <option value="id">Book ID</option>
+        <option value="name">Book title</option>
+        <option value="authorLname">Writer</option>
+        <option value="-price" >Price </option>
+        <option value="-likes" data-icon="glyphicon-glass">Popularity (DECS)</option>
+    </select>
+</span>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Book title</th>
+            <th>Writer</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>In stock</th>
+            <th><span class="glyphicon glyphicon-thumbs-up"></span></th>
+            <th><span class="glyphicon glyphicon-thumbs-down"></span></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="book in books | orderBy: sortColumn | filter: q | startFrom:currentPage*pageSize | limitTo:pageSize ">
+
+            <td>{{book.id}}</td>
+            <td><a data-toggle="modal" href="#myModalBookInfo">
+                <img class="myImg" ng-src="{{book.pic}}" ng-click="getInfo(book.name,book.authorFname + ' ' +book.authorLname,book.description,book.price + ' ' + book.crc)"></a></td>
+            <td>{{book.name}}</td>
+            <td>{{book.authorFname}} {{book.authorLname}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.price | number:2}} {{book.crc | uppercase}}</td>
+            <td>{{book.inStock}}</td>
+            <td><span class="glyphicon glyphicon-thumbs-up myKursor" ng-click="incrementLikes(book)"></span>{{book.likes}}</td>
+            <td><span class="glyphicon glyphicon-thumbs-down myKursor" ng-click="incrementDislikes(book)"></span>{{book.dislikes}}</td>
+            <td ng-hide="true">{{book.description}}</td>
+        </tr>
+
+    </tbody>
+</table>
+<!--------------->
+
+<div id="myModalBookInfo" class="modal">
+    <div class="modal-content-info">
+        <span class="close closeBookInfo" data-dismiss="modal">&times;</span>
+        <div id="bookInfo">
+            <ul>
+                <li><em><strong>Book title: </strong></em>{{bookInfoName}}</li>
+                <br />
+                <li><em><strong>Author:</strong> </em>{{bookInfoAuthor}}</li>
+                <br />
+                <li><em><strong>Description:</strong> </em>{{bookInfoDescription}}</li>
+                <br />
+                <li><em><strong>Price:</strong> </em>{{bookInfoPrice}}</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--------------->
+
+<footer class="myFooter">
+    <div class="container myContainerF">
+        <ul class="pagination">
+            <li id="liPrev" class="disabled" ng-click="currentPage=currentPage-1;prevPage(currentPage)"><a ui-sref="home">&laquo;</a></li>
+            <li ng-repeat="x in pages">
+                <a ui-sref="home" ng-click="setPage(x)">{{x+1}}</a>
+            </li>
+            <li id="liNext"><a ui-sref="home" ng-click="currentPage=currentPage+1;nextPage(currentPage)">&raquo;</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+

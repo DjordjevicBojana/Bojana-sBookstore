@@ -1,0 +1,192 @@
+html{
+height:100%;
+}
+body{
+	/*background-image:url(../img/pozadina7.jpg);*/
+	background-size: 30% 40%;
+	background-position: bottom right;
+	background-image: url(../img/pozadina1.jpg);
+	background-repeat: no-repeat;
+	min-height: 100%;
+}
+h1{
+    text-align: center;
+}
+.myKursor{
+	cursor:pointer;
+}
+.myRight{
+	position:absolute;
+	right:0;
+}
+.myMiddle{
+    position:absolute;
+    right:50%;
+}
+.myLeft{
+	position:absolute;
+	left:50%;
+}
+.myUppercase{
+	text-transform:uppercase;
+}
+#textAbout{
+    text-align: center;
+    font-style: italic;
+    font-size: x-large;
+}
+#textAdress{
+    text-align: right;
+    font-style: italic;
+    font-size: medium;
+
+}
+
+.myActive{
+	font-weight:600;
+}
+.myLogin{
+    width:85%;
+    height:90%;
+    margin:8% auto;
+    padding:15px;
+    
+}
+.myLabelLogin{
+   position:relative; 
+   width:40%;
+   
+}
+.myInputLogin{
+   position:relative;
+   left:5%;
+   width:50%;
+}
+.myInput30{
+    width:30%;
+}
+.myInput15{
+    width:15%;
+}
+.myInputdescription{
+    height:65px;
+}
+
+.myImg{
+    width:75px;
+    height:100px;
+    float:left;
+    margin-right:20px;
+}
+
+.myFooter{
+   position:relative;
+   bottom:0;
+   /*left:25%;*/
+  
+}
+
+.myBtnLogin{
+    margin-top:15%;
+    margin-left: 40%;
+}
+.myContainer{
+	position:absolute;
+	height:100%;
+}
+.myContainerF{
+	width:40%;
+}
+.myTemplate{
+   position:relative;
+   min-height:150%;
+   
+}
+.myNewDataform{
+  width:90%;
+
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10020; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0);  /*Fallback color*/ 
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.myModalLogin {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 55%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    margin:10% auto; /* 10% from the top and centered */
+}
+
+/* Modal Content/Box */
+.modal-content-login {
+    background-color: #fefefe;
+    margin: 5% auto;  /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+    height:80%;
+}
+.modal-content-info {
+    background-color: #fefefe;
+    margin: 5% auto;  /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    height:50%;
+	padding-top:3%;
+	padding-right:2%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 640px){
+
+	body{
+		background-size: 25% 25%;
+	}
+	.myColumn1{
+		visibility:collapse;
+		height:0;
+    }
+	.myColumn3{
+		visibility:collapse;
+		height:0;
+    }
+}
+
