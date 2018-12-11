@@ -1,0 +1,29 @@
+how to test this project?
+
+1.download and instal node.js
+2.install http server from command prompt with this command: 
+	
+	npm install -g httpserver
+
+3.download and install git 
+4.On GitHub, navigate to the main page of the repository. (Note: If the repository is empty, you can manually copy the repository 
+page's URL from your browser and skip to step 7)
+  (https://help.github.com/articles/cloning-a-repository/) 
+5.Under the repository name, click Clone or download.
+
+6.In the Clone with HTTPs section, click  to copy the clone URL for the repository.
+
+7.Open Git Bash. Change the current working directory to the location where you want the cloned directory to be made.
+
+Type git clone, and then paste the URL you copied in Step 6.
+	
+	git clone https://github.com/DjordjevicBojana/Bojana-sBookstore
+
+9.Press Enter. Your local clone will be created.
+10.from command prompt navigate to this local directory and then start your http server with command
+	
+	httpserver
+
+11.when httpserver is up and running, from your browser navigate to http://localhost:8080/ and you will get home page!
+	
+ 
